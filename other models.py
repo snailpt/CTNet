@@ -37,7 +37,6 @@ class EEGNet(nn.Module):
     def forward(self, x):
         x = self.conv1(x)
         x = self.batch_norm1(x)
-        x = self.elu(x)
         x = self.depthwise_conv(x)
         x = self.batch_norm2(x)
         x = self.elu(x)
