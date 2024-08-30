@@ -199,6 +199,63 @@ class BranchEEGNetTransformer(nn.Sequential):
                                  emb_size=emb_size),
         )
 
+        
+class PositioinalEncoding(nn.Module):
+    def __init__(self, embedding, length=100, dropout=0.1):
+        super().__init__()
+        self.dropout = nn.Dropout(dropout)
+        self.encoding = nn.Parameter(torch.randn(1, length, embedding))
+    def forward(self, x): # x-> [batch, embedding, length]
+        x = x + self.encoding[:, :x.shape[1], :].cuda()
+        return self.dropout(x)        
+        
+            
+class EEGTransformer(nn.Module):
+    def __init__(self, heads=4, 
+                 emb_size=40,
+                 depth=6, 
+                 database_type='A', 
+                 eeg1_f1 = 20,
+                 eeg1_kernel_size = 64,
+                 eeg1_D = 2,
+                 eeg1_pooling_size1 = 8,
+                 eeg1_pooling_size2 = 8,
+                 eeg1_dropout_rate = 0.3,
+                 eeg1_number_channel = 22,
+                 flatten_eeg1 = 600,
+                 **kwargs):
+        super().__init__()
+        self.number_class, self.number_channel = numberClassChannel(database_type)
+        self.emb_size = emb_size
+        self.flatten_eeg1 = flatten_eeg1
+        self.flatten = nn.Flatten()
+        # print('self.number_channel', self.number_channel)
+        self.cnn = BranchEEGNetTransformer(heads, depth, emb_size, number_channel=self.number_channel,
+                                              f1 = eeg1_f1,
+                                              kernel_size = eeg1_kernel_size,
+                                              D = eeg1_D,
+                                              pooling_size1 = eeg1_pooling_size1,
+                                              pooling_size2 = eeg1_pooling_size2,
+                                              dropout_rate = eeg1_dropout_rate,
+                                              )
+        self.position = PositioinalEncoding(emb_size, dropout=0.1)
+        self.trans = TransformerEncoder(heads, depth, emb_size)
+#         self.drop = nn.Dropout(0.5)
+        
+        
+        # self.cnn_module = Branchcnn_moduleTransformer(heads, depth, emb_size)
+        self.flatten = nn.Flatten()
+        self.classification = ClassificationHead(self.flatten_eeg1 , self.number_class) # FLATTEN_EEGNet + FLATTEN_cnn_module
+    def forward(self, x):
+        cnn = self.cnn(x)
 
+        # position emb 
+        cnn = cnn * math.sqrt(self.emb_size)
+        cnn = self.position(cnn)
+        
+        trans = self.trans(cnn)
+        features = cnn+trans
+        out = self.classification(self.flatten(features))
+        return features, out
      
         
