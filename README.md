@@ -15,4 +15,4 @@ Pytorch 1.13.1
 ### Citation
 Hope this code can be useful. I would appreciate you citing us in your paper. 😊
 
-Zhao, W., Jiang, X., Zhang, B., Xiao, S., & Weng, S. (2024). CTNet: A convolutional transformer network for EEG-based motor imagery classification. Scientific Reports, 14(1), 1-22. https://doi.org/10.1038/s41598-024-71118-7
+Zhao, W., Jiang, X., Zhang, B. et al. CTNet: a convolutional transformer network for EEG-based motor imagery classification. Sci Rep 14, 20237 (2024). https://doi.org/10.1038/s41598-024-71118-7
