@@ -1,13 +1,15 @@
 # CTNet
 ### CTNet: A Convolutional Transformer Network for EEG-Based Motor Imagery Classification [[Paper](https://www.nature.com/articles/s41598-024-71118-7)]
-core idea: CNN + Transformer encoder
+core idea: CNN (an improved version of EEGNet) + Transformer encoder + FC
+<hr>
 
 ### Requirements:
+<hr>
 Python 3.10
-
 Pytorch 1.13.1
 
 ### Abstract
+<hr>
 ![architecture of CTNet](https://raw.githubusercontent.com/snailpt/CTNet/main/architecture.png)
 
 
