@@ -1,6 +1,6 @@
 # CTNet
 ### CTNet: A Convolutional Transformer Network for EEG-Based Motor Imagery Classification [[Paper](https://www.nature.com/articles/s41598-024-71118-7)]
-core idea: CNN (an improved version of EEGNet) + Transformer encoder + FC
+core idea: CNN (an improved version of EEGNet) + Transformer encoder 
 
 Our research builds upon and improves the [EEG Conformer](https://github.com/eeyhsong/EEG-Conformer), and we sincerely thank the creators of this open-source project.
 
