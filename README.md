@@ -1,4 +1,4 @@
-# CTNet
+# CTNet for motor imagery EEG classification
 ### CTNet: A Convolutional Transformer Network for EEG-Based Motor Imagery Classification [[Paper](https://www.nature.com/articles/s41598-024-71118-7)]
 core idea: CNN (an improved version of EEGNet) + Transformer encoder 
 
