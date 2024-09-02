@@ -55,7 +55,7 @@ def changeGdf2Mat(dir_path, mode="train"):
             # evaluate dataset are labeled as 'Unknnow'
             event_id = {'Unknown': event_dict['783']}
             
-        # 选取我们关心的四个类别对应的事件，这里events[:, 2]是指events中的第三列，即事件的编号。
+        # Select the events corresponding to the four categories we are interested in. Here, events[:, 2] refers to the third column of the events array, which represents the event IDs.
         selected_events = events[np.isin(events[:, 2], list(event_id.values()))]  
         
         # remove EOG channels
