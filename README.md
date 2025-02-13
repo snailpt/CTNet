@@ -19,6 +19,7 @@ Brain-computer interface (BCI) technology bridges the direct communication betwe
 Python 3.10
 
 Pytorch 1.13.1
+
 Cross-subject classification accuracy (in percentage %) and kappa of state-of-the-art algorithms on the BCI IV-2a dataset.
 | Method               | A01   | A02   | A03   | A04   | A05   | A06   | A07   | A08   | A09   | Average±Std.    | Kappa  |
 |----------------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-----------------|--------|
