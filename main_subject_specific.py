@@ -291,7 +291,7 @@ class ExP():
                  flatten_eeg1 = 600, 
                  validate_ratio = 0.2,
                  learning_rate = 0.001,
-                 batch_size = 72,  
+                 batch_size = 72,       # each batch of raw train dataset, real training batchsize =  batch_size * (1 + N_AUG) for additional data augmentation.
                  ):
         
         super(ExP, self).__init__()
@@ -700,7 +700,7 @@ if __name__ == "__main__":
     EVALUATE_MODE = 'LOSO-No' # leaving one subject out subject-dependent  subject-indenpedent
 
     N_SUBJECT = 9       # BCI 
-    N_AUG = 3           # data augmentation times for benerating artificial training data set
+    N_AUG = 3           # data augmentation times for generating artificial training data set
     N_SEG = 8           # segmentation times for S&R
 
     EPOCHS = 1000
