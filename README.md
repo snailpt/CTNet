@@ -20,6 +20,8 @@ Python 3.10
 
 Pytorch 1.13.1
 
+mne 1.5.1
+
 ### Performance Comparison:
 
 Comparison of Subject-specific classification accuracy (in %) and kappa on the BCI IV-2a dataset.
