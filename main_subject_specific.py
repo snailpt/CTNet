@@ -460,8 +460,8 @@ class ExP():
                 train_data = img[:-number_validate]
                 train_label = label[:-number_validate]
                 
-                val_data_list.append(img[number_validate:])
-                val_label_list.append(label[number_validate:])
+                val_data_list.append(img[-number_validate:])       # correct 20250417
+                val_label_list.append(label[-number_validate:])    # correct 20250417
                 
                 # real train dataset
                 img = Variable(train_data.type(self.Tensor))
