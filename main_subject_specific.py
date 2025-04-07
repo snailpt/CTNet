@@ -424,7 +424,7 @@ class ExP():
         img = torch.from_numpy(img)
         label = torch.from_numpy(label - 1)
         dataset = torch.utils.data.TensorDataset(img, label)
-        self.dataloader = torch.utils.data.DataLoader(dataset=dataset, batch_size=self.batch_size, shuffle=True)
+        
 
         test_data = torch.from_numpy(test_data)
         test_label = torch.from_numpy(test_label - 1)
@@ -443,6 +443,7 @@ class ExP():
         result_process = []
         # Train the cnn model
         for e in range(self.n_epochs):
+            self.dataloader = torch.utils.data.DataLoader(dataset=dataset, batch_size=self.batch_size, shuffle=True)
             epoch_process = {}
             epoch_process['epoch'] = e
             # in_epoch = time.time()
