@@ -25,9 +25,7 @@ mne 1.5.1
 ### Dataset
 [BCI Competition IV-2a & IV-2b datasets](https://www.bbci.de/competition/iv/) 
 
-[labels for 2a](https://www.bbci.de/competition/iv/results/ds2a/true_labels.zip)
-
-[labels for 2b](https://www.bbci.de/competition/iv/results/ds2b/true_labels.zip)
+labels: [BCI IV-2a](https://www.bbci.de/competition/iv/results/ds2a/true_labels.zip), [BCI IV-2b](https://www.bbci.de/competition/iv/results/ds2b/true_labels.zip)
 
 
 ### Performance Comparison:
