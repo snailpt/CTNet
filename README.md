@@ -28,6 +28,10 @@ mne 1.5.1
 labels: [BCI IV-2a](https://www.bbci.de/competition/iv/results/ds2a/true_labels.zip), [BCI IV-2b](https://www.bbci.de/competition/iv/results/ds2b/true_labels.zip)
 
 
+### Experimental Setup: 
+The original training set was split into training and validation subsets with a ratio of 7:3. Data augmentation was applied to expand the training set to three times its original size.
+
+
 ### Performance Comparison:
 
 Comparison of Subject-specific classification accuracy (in %) and kappa on the BCI IV-2a dataset.
