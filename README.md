@@ -29,8 +29,9 @@ labels: [BCI IV-2a](https://www.bbci.de/competition/iv/results/ds2a/true_labels.
 
 
 ### Experimental Setup: 
-The original training set was split into training and validation subsets with a ratio of 7:3. Data augmentation was applied to expand the training set to three times its original size.
+The original training set was split into training and validation subsets with a ratio of 7:3. Data augmentation was applied to expand the training set to three times (N_AUG=3) its original size.
 
+Note: We observed that increasing the data augmentation factor (N_Aug in our code) leads to improved classification accuracy, but also results in a corresponding increase in training time.
 
 ### Performance Comparison:
 
