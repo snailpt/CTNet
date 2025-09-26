@@ -22,11 +22,27 @@ Pytorch 1.13.1
 
 mne 1.5.1
 
-### Dataset
-[BCI Competition IV-2a & IV-2b datasets](https://www.bbci.de/competition/iv/) 
+### Datasets
+datasets: [BCI Competition IV-2a & IV-2b datasets](https://www.bbci.de/competition/iv/) 
+
+Create the BCICIV_2a_gdf directory to store the downloaded BCI IV-2a dataset.
+
+Create the BCICIV_2b_gdf directory to store the downloaded BCI IV-2a dataset.
 
 labels: [BCI IV-2a](https://www.bbci.de/competition/iv/results/ds2a/true_labels.zip), [BCI IV-2b](https://www.bbci.de/competition/iv/results/ds2b/true_labels.zip)
 
+Create the true_labels directory to store the label data of the downloaded BCI IV-2a and 2b datasets.
+
+#### Preprocessing dataset： Merge data and labels to create a dataloader for training the model （EDF -> MAT）.
+Run `python3 preprocessing_for_2a.py` for 2a dataset
+Run `python3 preprocessing_for_2b.py` for 2b dataset
+
+### Traning
+#### For subject-dependent
+run `python3 main_subject_specific.py` or CTNet_2a_82.91.ipynb
+
+#### For subject-independent
+run main_cross_subject_LOSO.ipynb
 
 ### Experimental Setup: 
 The original training set was split into training and validation subsets with a ratio of 7:3. Data augmentation was applied to expand the training set to three times (N_AUG=3) its original size.
